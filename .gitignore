@@ -1,26 +1,45 @@
-# Node modules
+# ======================================
+# Node modules (for both BE and FE)
 node_modules/
+
 # dotenv environment variables
 .env
+.env.*.local
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# OS
+
+# OS-specific files
 .DS_Store
 Thumbs.db
-# Build output
+
+# Build output (React, Next.js, etc.)
 dist/
 build/
+
 # VSCode
 .vscode/
-# Coverage
+
+# Coverage reports
 coverage/
+
+# Test cache
+.cache/
+*.tmp
+
 # Misc
 *.local
-*.cache
-*.tmp
-# React
-*.env.*.local
+
+# React specific
+*.env.production
+*.env.development
+*.env.test
+
+# Optional: macOS + Windows system files
+Icon?
+ehthumbs.db
+Desktop.ini
