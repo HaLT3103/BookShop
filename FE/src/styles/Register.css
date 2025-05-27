@@ -1,0 +1,59 @@
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .register-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa các input */
+    width: 100%;
+  }
+  
+  .register-container input,
+  .register-container button {
+    width: 100%; /* Đảm bảo tất cả có cùng chiều rộng */
+    max-width: 350px; /* Giới hạn chiều rộng tối đa */
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .register-container input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+  }
+  
+  .register-container button {
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .register-container button:hover {
+    background: #0056b3;
+  }
+  
+  .register-container button:active {
+    background: #003d80;
+  }
+  

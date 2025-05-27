@@ -1,0 +1,79 @@
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung */
+  width: 100%;
+}
+
+.login-container input, 
+.login-container button {
+  width: 90%; /* Đảm bảo input và button có cùng kích thước */
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-container button:hover {
+  background: #0056b3;
+}
+
+/* Dòng "Chưa có tài khoản? Đăng ký" */
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.register-link span {
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-link span:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    width: 90%;
+  }
+}

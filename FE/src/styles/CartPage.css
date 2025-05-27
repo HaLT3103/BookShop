@@ -1,0 +1,133 @@
+/* CartPage.css */
+.cart-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .cart-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cart-empty {
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    padding: 16px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  
+  .cart-image {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+    background: #f4f4f4;
+  }
+  
+  .cart-details {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .cart-book-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .cart-book-price {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .cart-remove-button {
+    width: 100%;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+  }
+  
+  .cart-remove-button:hover {
+    background: #c0392b;
+  }
+  
+  .cart-detail-button {
+    width: 100%;
+    background: #f4f4f4;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: block;
+  }
+  
+  .cart-detail-button:hover {
+    background: #e0e0e0;
+    color: #007bff;
+  }
+  
+  .cart-total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .cart-checkout-button, .cart-back-button {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .cart-checkout-button:hover, .cart-back-button:hover {
+    background: #0056b3;
+  }
