@@ -1,7 +1,7 @@
 const express = require('express');
 const Cart = require('../models/Cart');
 const Book = require('../models/Book');
-const { authMiddleware } = require('./auth');
+const { authMiddleware } = require('./authUserRoutes');
 
 const router = express.Router();
 

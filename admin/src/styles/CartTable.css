@@ -1,0 +1,102 @@
+.cart-edit-form-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 24px 24px 24px;
+  max-width: 520px;
+  margin: 60px auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  z-index: 11;
+  font-family: inherit;
+}
+.cart-edit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.cart-edit-table th, .cart-edit-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
+.cart-edit-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+.cart-edit-form-modal button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-right: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+.cart-edit-form-modal button:hover {
+  background: #1256a3;
+}
+.cart-edit-form-modal input[type="number"],
+.cart-edit-form-modal input[type="text"] {
+  width: 90px;
+  padding: 4px 6px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  font-size: 15px;
+}
+.cart-edit-form-modal .add-book-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.cart-edit-form-modal .add-book-row input {
+  flex: 1;
+}
+.cart-edit-form-modal .add-book-row button {
+  margin: 0;
+  padding: 6px 12px;
+}
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+}
+.book-table button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-right: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+  outline: none;
+}
+.book-table button:hover {
+  background: #1256a3;
+}
+.book-table-header-row button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-table-header-row button:hover {
+  background: #219150;
+}

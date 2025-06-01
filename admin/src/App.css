@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #232946;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.admin-sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 24px 0 16px 24px;
+  letter-spacing: 1px;
+}
+.admin-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-sidebar-list li {
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-sidebar-list li.active, .admin-sidebar-list li:hover {
+  background: #394867;
+}
+.admin-dashboard-content {
+  flex: 1;
+  padding: 32px;
+  background: #f5f6fa;
+}

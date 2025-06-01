@@ -9,6 +9,8 @@ const bookSchema = new mongoose.Schema({
   year: { type: Number },
   pages: { type: Number },
   description: { type: String },
+  quantity: { type: Number, default: 0 },
+  id: { type: String, unique: true },
 });
 
 const Book = mongoose.model("Book", bookSchema);

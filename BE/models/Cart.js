@@ -6,6 +6,7 @@ const cartSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  userIdStr: { type: String }, // userId dạng string (từ model User)
   items: [
     {
       bookId: {
@@ -13,6 +14,7 @@ const cartSchema = new mongoose.Schema({
         ref: 'Book',
         required: true,
       },
+      bookIdStr: { type: String }, // id dạng string (từ model Book)
       quantity: {
         type: Number,
         default: 1,

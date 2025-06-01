@@ -1,0 +1,28 @@
+.admin-sidebar {
+  width: 220px;
+  background: #232946;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.admin-sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 24px 0 16px 24px;
+  letter-spacing: 1px;
+}
+.admin-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-sidebar-list li {
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-sidebar-list li.active, .admin-sidebar-list li:hover {
+  background: #394867;
+}
