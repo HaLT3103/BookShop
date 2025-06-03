@@ -98,17 +98,22 @@ const CartTable = () => {
 
   const handleAddSave = async (newCart) => {
     try {
+      console.log("Sending new cart:", newCart); // Log dữ liệu gửi đi
       const res = await fetch("http://localhost:5000/api/admin/carts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCart)
       });
-      if (!res.ok) throw new Error("Tạo giỏ hàng thất bại!");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Tạo giỏ hàng thất bại!");
+      }
       const data = await res.json();
       setCarts((prev) => [data, ...prev]);
       setShowAddForm(false);
       setEditingCart(null);
     } catch (err) {
+      console.error("Error adding cart:", err); // Log lỗi chi tiết
       alert(err.message);
     }
   };
@@ -128,7 +133,7 @@ const CartTable = () => {
     <div className="book-table-container">
       <div className="book-table-header-row">
         <h3>Danh sách Cart</h3>
-        <button onClick={handleAddCart} style={{ float: "right", marginTop: 4 }}>+ Thêm giỏ hàng</button>
+        {/* <button onClick={handleAddCart} style={{ float: "right", marginTop: 4 }}>+ Thêm giỏ hàng</button> */}
       </div>
       {loading ? (
         <p>Đang tải...</p>
@@ -151,7 +156,7 @@ const CartTable = () => {
                   <img src={sortIcon} alt="sort" className={sortField === "total" ? `sort-icon active ${sortOrder}` : "sort-icon"} />
                 </th>
                 <th>Số loại sách</th>
-                <th>Chi tiết</th>
+                <th>Hành động</th>
               </tr>
             </thead>
             <tbody>

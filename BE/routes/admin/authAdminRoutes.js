@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const Admin = require("../models/Admin");
+const Admin = require("../../models/Admin");
 const router = express.Router();
 
 // Đăng ký admin

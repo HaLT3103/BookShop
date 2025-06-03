@@ -4,8 +4,10 @@ import "../styles/Sidebar.css";
 
 const sidebarItems = [
   { key: "books", label: "Quản lý Sách" },
-  { key: "carts", label: "Quản lý Giỏ hàng" },
   { key: "users", label: "Quản lý Tài khoản" },
+  { key: "carts", label: "Quản lý Giỏ hàng" },
+  { key: "orders", label: "Quản lý Đơn hàng" },
+  { key: "addresses", label: "Quản lý Địa chỉ giao hàng" },
   // Có thể thêm các mục khác như Thống kê, Người dùng...
 ];
 

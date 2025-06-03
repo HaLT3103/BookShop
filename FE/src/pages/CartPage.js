@@ -97,7 +97,7 @@ const CartPage = () => {
             </div>
           ))}
           <h2 className="cart-total">Tổng giá: ${getTotalPrice()}</h2>
-          <button className="cart-checkout-button" onClick={() => alert("Chức năng thanh toán đang được phát triển!")}>Thanh toán</button>
+          <button className="cart-checkout-button" onClick={() => navigate("/order", { state: { cart } })}>Thanh toán</button>
         </div>
       )}
     </div>

@@ -1,0 +1,90 @@
+/* OrderPage styles */
+.order-page-layout {
+  display: flex;
+  gap: 32px;
+  margin: 32px auto;
+  max-width: 900px;
+}
+.order-products {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(51,88,230,0.07);
+}
+.order-products h2 {
+  color: #3358e6;
+  margin-bottom: 18px;
+}
+.order-products img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 16px;
+}
+.order-products .order-product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.order-products .order-product-title {
+  font-weight: 600;
+}
+.order-products .order-product-qty {
+  color: #888;
+  font-size: 15px;
+}
+.order-products .order-product-price {
+  font-weight: 600;
+  color: #3358e6;
+  min-width: 80px;
+  text-align: right;
+}
+.order-products .order-total {
+  border-top: 1px solid #e3e3e3;
+  margin: 18px 0;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: right;
+}
+.order-info {
+  width: 340px;
+  background: #f7f8fa;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(51,88,230,0.07);
+}
+.order-info h2 {
+  color: #3358e6;
+  margin-bottom: 18px;
+}
+.order-info label {
+  font-weight: 500;
+}
+.order-info select,
+.order-info textarea,
+.order-info input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #dbeafe;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  background: #fff;
+}
+.order-info textarea {
+  resize: vertical;
+}
+.order-info .modal-save-btn {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.order-info .profile-edit-btn {
+  margin-top: 8px;
+}
+.order-info .modal-cancel-btn {
+  margin-left: 8px;
+}

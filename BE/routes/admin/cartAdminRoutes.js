@@ -1,6 +1,6 @@
 const express = require("express");
-const Cart = require("../models/Cart");
-const Book = require("../models/Book");
+const Cart = require("../../models/Cart");
+const Book = require("../../models/Book");
 const router = express.Router();
 
 // Lấy tất cả cart

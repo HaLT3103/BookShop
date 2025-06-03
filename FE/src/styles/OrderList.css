@@ -1,0 +1,70 @@
+/* OrderList styles */
+.order-list-container {
+  margin-top: 18px;
+}
+.order-list-item {
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 18px;
+  background: #f7f8fa;
+}
+.order-list-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.order-list-status {
+  margin-left: 18px;
+  color: #3358e6;
+  font-weight: bold;
+}
+.order-list-date {
+  margin-bottom: 8px;
+}
+.order-list-address {
+  margin-bottom: 8px;
+}
+.order-list-payment {
+  margin-bottom: 8px;
+}
+.order-list-note {
+  margin-bottom: 8px;
+}
+.order-list-products {
+  margin: 0;
+  padding-left: 18px;
+}
+.order-list-product-item {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+.order-list-product-title {
+  font-weight: 500;
+}
+.order-list-product-price {
+  color: #3358e6;
+  margin-left: 6px;
+}
+.order-list-total {
+  text-align: right;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #3358e6;
+}
+.order-cancel-btn {
+  background: #fff;
+  color: #e53935;
+  border: 1px solid #e53935;
+  border-radius: 5px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.order-cancel-btn:hover {
+  background: #e53935;
+  color: #fff;
+}

@@ -1,0 +1,209 @@
+/* Bảng quản lý đơn hàng cho admin - style đồng bộ với BookTable/AddressTable */
+.order-table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px;
+  margin-top: 16px;
+  position: relative;
+}
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.order-table th, .order-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+.order-table th {
+  background: #f5f6fa;
+  font-weight: 600;
+  color: #22304a;
+}
+.order-table tr {
+  transition: background 0.15s;
+}
+.order-table tr:hover {
+  background: #f0f4fa;
+}
+.order-table-status {
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.order-table-status.pending { background: #fffbe6; color: #bfa100; }
+.order-table-status.confirmed { background: #e0f7fa; color: #00796b; }
+.order-table-status.shipping { background: #e3f2fd; color: #1976d2; }
+.order-table-status.delivered { background: #e8f5e9; color: #388e3c; }
+.order-table-status.cancelled { background: #ffebee; color: #d32f2f; }
+.order-table-actions {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  gap: 8px;
+  border: none;
+  background: none;
+  padding: 0;
+  height: 40px;
+}
+
+.edit-button, .delete-button {
+  margin-right: 8px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.order-table-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  min-width: 70px;
+  font-size: 15px;
+  background: #3b82f6;
+  color: #fff;
+  transition: background 0.18s;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.order-table-actions button:active {
+  transform: scale(0.97);
+}
+.order-table-actions button.delete {
+  background: #e94560;
+}
+.order-table-actions button.delete:hover {
+  background: #d7263d;
+}
+.order-table-actions button:hover {
+  background: #2563eb;
+}
+
+.order-table-products {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 16px;
+}
+.order-table-product-item {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.order-table-total {
+  font-weight: 600;
+  color: #1976d2;
+  margin-top: 4px;
+}
+.order-edit-dialog-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-edit-dialog {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 28px 32px 20px 32px;
+  min-width: 340px;
+  max-width: 95vw;
+  animation: fadeInDialog 0.18s;
+}
+.order-edit-dialog h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 20px;
+  color: #22304a;
+  font-weight: 600;
+  text-align: center;
+}
+.order-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f5f6fa;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 0;
+}
+.order-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.order-edit-row label {
+  min-width: 90px;
+  font-weight: 500;
+  color: #22304a;
+}
+.order-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 15px;
+  background: #fff;
+}
+.order-edit-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+.order-edit-save {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.order-edit-save:hover {
+  background: #388e3c;
+}
+.order-edit-cancel {
+  background: #ccc;
+  color: #22304a;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.order-edit-cancel:hover {
+  background: #b0b0b0;
+}
+@keyframes fadeInDialog {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 800px) {
+  .order-table th, .order-table td {
+    padding: 6px 4px;
+    font-size: 14px;
+  }
+  .order-table-container {
+    padding: 10px;
+  }
+}

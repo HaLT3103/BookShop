@@ -10,6 +10,7 @@ import SearchResults from "./pages/SearchResults";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Profile from "./pages/Profile";
+import OrderPage from "./pages/OrderPage";
 import "./styles/App.css";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/order" element={<OrderPage />} />
             </Routes>
           </main>
           <Footer />

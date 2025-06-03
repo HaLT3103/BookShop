@@ -34,7 +34,7 @@ const CartEditForm = ({ cart, onSave, onCancel }) => {
   return (
     <div className="cart-edit-form-modal">
       <h3>{cart._id ? "Chỉnh sửa Cart" : "Thêm mới Cart"}</h3>
-      <div style={{ marginBottom: 12 }}>
+      {/* <div style={{ marginBottom: 12 }}>
         <label style={{ fontWeight: 500 }}>User ID (string): </label>
         <input
           type="text"
@@ -43,7 +43,7 @@ const CartEditForm = ({ cart, onSave, onCancel }) => {
           placeholder="Nhập userId"
           style={{ marginLeft: 8, width: 200 }}
         />
-      </div>
+      </div> */}
       <div className="add-book-row">
         <input
           type="text"
