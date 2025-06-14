@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "../styles/HomePage.css"; // Dùng chung CSS với HomePage
+import "../styles/HomePage.css";
 
-const SearchResults = () => {
+const parsePriceRange = (priceStr) => {
+  if (priceStr === "0-10") return { min: 0, max: 10 };
+  if (priceStr === "10-20") return { min: 10, max: 20 };
+  if (priceStr === ">20") return { min: 20, max: Infinity };
+  return { min: 0, max: Infinity };
+};
+
+const FilterPage = () => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const location = useLocation();
@@ -11,27 +18,25 @@ const SearchResults = () => {
   useEffect(() => {
     fetch("http://localhost:5000/api/books")
       .then((response) => response.json())
-      .then((data) => {
-        setBooks(data);
-      })
-      .catch((error) => console.error("Error fetching books:", error));
+      .then((data) => setBooks(data))
+      .catch((error) => setBooks([]));
   }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const query = params.get("query")?.toLowerCase() || "";
-
-    if (query) {
-      const results = books.filter((book) =>
-        book.title.toLowerCase().includes(query)
-      );
-      setFilteredBooks(results);
-    }
+    const price = params.get("price");
+    const { min, max } = parsePriceRange(price);
+    setFilteredBooks(
+      books.filter((book) => {
+        const p = Number(book.price);
+        return p >= min && p <= max;
+      })
+    );
   }, [location.search, books]);
 
   return (
     <div className="home-page">
-      <h1 className="page-title">Kết quả tìm kiếm</h1>
+      <h1 className="page-title">Lọc theo giá</h1>
       {filteredBooks.length > 0 ? (
         <div className="book-list">
           {filteredBooks.map((book) => (
@@ -56,4 +61,4 @@ const SearchResults = () => {
   );
 };
 
-export default SearchResults;
+export default FilterPage;

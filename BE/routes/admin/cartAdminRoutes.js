@@ -3,11 +3,9 @@ const Cart = require("../../models/Cart");
 const Book = require("../../models/Book");
 const router = express.Router();
 
-// Lấy tất cả cart
 router.get("/", async (req, res) => {
   try {
     const carts = await Cart.find().populate("userId").populate("items.bookId");
-    // Đảm bảo mỗi item đều có bookIdStr (ưu tiên lấy từ bookId.id nếu populate)
     const cartsWithBookIdStr = carts.map(cart => {
       const items = cart.items.map(item => {
         let bookIdStr = item.bookIdStr;
@@ -44,11 +42,9 @@ router.get("/:id", async (req, res) => {
 // Thêm cart mới
 router.post("/", async (req, res) => {
   try {
-    // Validate: userIdStr phải có
     if (!req.body.userIdStr || req.body.userIdStr.trim() === "") {
       return res.status(400).json({ message: "userIdStr là bắt buộc" });
     }
-    // Tìm user theo userIdStr (có thể là string hoặc number)
     const User = require("../models/User");
     let user = await User.findOne({ $or: [
       { userId: req.body.userIdStr },
@@ -59,7 +55,6 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ message: "Không tìm thấy user với userIdStr này" });
     }
     req.body.userId = user._id;
-    // Xử lý items: nếu có bookIdStr mà thiếu bookId thì tìm bookId
     if (Array.isArray(req.body.items)) {
       for (let item of req.body.items) {
         if (item.bookIdStr && !item.bookId) {
@@ -89,7 +84,6 @@ router.post("/", async (req, res) => {
 // Sửa cart
 router.put("/:id", async (req, res) => {
   try {
-    // Nếu items có bookIdStr mà thiếu bookId, tự động tìm và gán bookId (ObjectId) tương ứng
     if (Array.isArray(req.body.items)) {
       for (let item of req.body.items) {
         if (item.bookIdStr && !item.bookId) {
@@ -98,7 +92,6 @@ router.put("/:id", async (req, res) => {
             item.bookId = foundBook._id;
           }
         }
-        // Ngược lại, nếu có bookId mà thiếu bookIdStr, cũng tự động gán
         if (item.bookId && !item.bookIdStr) {
           const foundBook = await Book.findById(item.bookId);
           if (foundBook) {

@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 const Admin = require("../../models/Admin");
 const router = express.Router();
 
-// Đăng ký admin
 router.post("/register", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -25,7 +24,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Đăng nhập admin
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;

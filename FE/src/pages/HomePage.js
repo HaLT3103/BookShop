@@ -8,10 +8,10 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/books") // Gọi API từ backend
+    fetch("http://localhost:5000/api/books") 
       .then((response) => response.json())
       .then((data) => {
-        setBooks(data); // Dữ liệu từ MongoDB
+        setBooks(data); 
       })
       .catch((error) => console.error("Error fetching books:", error));
   }, []);

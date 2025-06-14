@@ -130,7 +130,7 @@ const BookTable = () => {
       {loading ? (
         <p>Đang tải...</p>
       ) : error ? (
-        <p style={{ color: "red" }}>{error}</p>
+        <p>{error}</p>
       ) : (
         <>
           <table className="book-table">

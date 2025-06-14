@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Profile from "./pages/Profile";
 import OrderPage from "./pages/OrderPage";
+import FilterPage from "./pages/FilterPage";
 import "./styles/App.css";
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/order" element={<OrderPage />} />
+              <Route path="/filter" element={<FilterPage />} />
             </Routes>
           </main>
           <Footer />

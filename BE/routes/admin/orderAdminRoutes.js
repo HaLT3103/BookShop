@@ -4,7 +4,6 @@ const { authMiddleware } = require('../user/authUserRoutes');
 
 const router = express.Router();
 
-// Lấy tất cả đơn hàng (admin)
 router.get('/', async (req, res) => {
   try {
     const orders = await Order.find({})
@@ -15,7 +14,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Cập nhật trạng thái đơn hàng (admin)
 router.put('/admin/:orderId', async (req, res) => {
   try {
     const { status } = req.body;
@@ -31,7 +29,6 @@ router.put('/admin/:orderId', async (req, res) => {
   }
 });
 
-// Xóa đơn hàng (admin)
 router.delete('/admin/:orderId', async (req, res) => {
   try {
     const order = await Order.findByIdAndDelete(req.params.orderId);

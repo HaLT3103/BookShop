@@ -8,6 +8,7 @@ import userIcon from '../assets/user.svg';
 const Navbar = () => {
   const [query, setQuery] = useState("");
   const [user, setUser] = useState(null);
+  const [priceRange, setPriceRange] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -50,6 +51,14 @@ const Navbar = () => {
     window.location.reload(); // ✅ Reload để cập nhật Navbar
   };
 
+  const handlePriceFilter = (e) => {
+    const value = e.target.value;
+    setPriceRange(value);
+    if (value) {
+      navigate(`/filter?price=${value}`);
+    }
+  };
+
   if (location.pathname === "/login") {
     return null; // Không hiển thị Navbar khi ở trang đăng nhập
   }
@@ -74,6 +83,18 @@ const Navbar = () => {
             className="search-input"
           />
           <button onClick={handleSearch} className="search-button">🔍</button>
+          
+          {/* <select
+            value={priceRange}
+            onChange={handlePriceFilter}
+            className="navbar-price-filter"
+            style={{ marginLeft: 8, height: 40, borderRadius: 4 }}
+          >
+            <option value="">Lọc giá</option>
+            <option value="0-10">0 - 10</option>
+            <option value="10-20">10 - 20</option>
+            <option value=">20">Trên 20</option>
+          </select> */}
         </div>
       )}
       <div className="navbar-links">

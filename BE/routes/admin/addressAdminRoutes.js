@@ -4,7 +4,6 @@ const { authMiddleware } = require('../user/authUserRoutes');
 
 const router = express.Router();
 
-// Lấy tất cả địa chỉ (admin)
 router.get('/', async (req, res) => {
   try {
     const addresses = await Address.find({}).populate('userId');
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Xóa địa chỉ (admin)
 router.delete('/admin/:addressId', async (req, res) => {
   try {
     const address = await Address.findByIdAndDelete(req.params.addressId);
@@ -25,7 +23,6 @@ router.delete('/admin/:addressId', async (req, res) => {
   }
 });
 
-// Cập nhật địa chỉ (admin) - cho phép đổi defaultAddress và otherAddresses
 router.put('/:addressId', async (req, res) => {
   try {
     const { defaultAddress, otherAddresses } = req.body;

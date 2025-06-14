@@ -75,10 +75,10 @@ const CartTable = () => {
     setShowEditForm(true);
   };
 
-  const handleAddCart = () => {
-    setEditingCart({ userIdStr: "", items: [] });
-    setShowAddForm(true);
-  };
+  // const handleAddCart = () => {
+  //   setEditingCart({ userIdStr: "", items: [] });
+  //   setShowAddForm(true);
+  // };
 
   const handleEditSave = async (updatedCart) => {
     try {
@@ -113,7 +113,6 @@ const CartTable = () => {
       setShowAddForm(false);
       setEditingCart(null);
     } catch (err) {
-      console.error("Error adding cart:", err); // Log lỗi chi tiết
       alert(err.message);
     }
   };
@@ -138,7 +137,7 @@ const CartTable = () => {
       {loading ? (
         <p>Đang tải...</p>
       ) : error ? (
-        <p style={{ color: "red" }}>{error}</p>
+        <p>{error}</p>
       ) : (
         <>
           <table className="book-table">
